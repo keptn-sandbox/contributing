@@ -4,7 +4,7 @@ In Keptn Sandbox we keep a collection of tools, services and integrations that e
 If you want to contribute, please read the following guidelines.
 
 
-## How to contribute?
+## How to contribute new content?
 
 1. Make sure your repository has the following contents
 
@@ -18,3 +18,6 @@ If you want to contribute, please read the following guidelines.
 1. You will be added as maintainer to the repo with full write access.
 1. We will support you in setting up the Travis build for your repo.
 
+## How to contribute in existing repositories?
+
+For existing repositories in the Keptn Sandbox Organization the respective code owners (see CODEOWNERS file of each repo) are mainly responsible. To contribute, please open a PR in the repo and ask the code owners for approval.
