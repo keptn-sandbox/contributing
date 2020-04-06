@@ -6,9 +6,13 @@ If you want to contribute, please read the following guidelines.
 
 ## How to contribute new content?
 
-1. Make sure your repository has the following contents
+1. Make sure your repository has the following files
 
-    - README with description of project, how to use it, ...
+    - README.md 
+      - with description of project
+      - how to use it
+      - how to install/uninstall
+      - compatibility matrix for Keptn version compatibility
     - LICENSE
     - CODEOWNERS (with your git account)
     
@@ -17,7 +21,7 @@ If you want to contribute, please read the following guidelines.
 1. We will transfer the project from your account to the keptn-sandbox organization. All issues and history will be kept.
 1. You will be added as maintainer to the repo with full write access.
 1. We will support you in setting up the Travis build for your repo.
-1. Present your service in a Keptn Developer or Community meeting to have your service listed on Keptn.sh 
+1. Present your service in a Keptn Developer or Community meeting to have your service listed on [Keptn.sh](https://keptn.sh) 
 
 ## How to contribute to existing repositories?
 
