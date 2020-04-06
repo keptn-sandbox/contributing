@@ -9,7 +9,7 @@ If you want to contribute, please read the following guidelines.
 1. Make sure your repository has the following contents
 
     - README with description of project, how to use it, ...
-    - License
+    - LICENSE
     - CODEOWNERS (with your git account)
     
 1. Create an issue in this repo to inform us about your repo
@@ -17,7 +17,8 @@ If you want to contribute, please read the following guidelines.
 1. We will transfer the project from your account to the keptn-sandbox organization. All issues and history will be kept.
 1. You will be added as maintainer to the repo with full write access.
 1. We will support you in setting up the Travis build for your repo.
+1. Present your service in a Keptn Developer or Community meeting to have your service listed on Keptn.sh 
 
-## How to contribute in existing repositories?
+## How to contribute to existing repositories?
 
 For existing repositories in the Keptn Sandbox Organization the respective code owners (see CODEOWNERS file of each repo) are mainly responsible. To contribute, please open a PR in the repo and ask the code owners for approval.
