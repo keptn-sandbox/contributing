@@ -17,7 +17,7 @@ If you want to contribute, please read the following guidelines.
     - CODEOWNERS (with your git account)
     
 1. Create an issue in this repo to inform us about your repo
-1. The team will reach out to you and ask to invite us to your project
+1. The team will reach out to you to start the transfer process
 1. We will transfer the project from your account to the keptn-sandbox organization. All issues and history will be kept.
 1. You will be added as maintainer to the repo with full write access.
 1. We will support you in setting up the Travis build for your repo.
