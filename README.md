@@ -33,4 +33,5 @@ The [Keptn Contrib](https://github.cmo/keptn-contrib) holds projects that have b
 To suggest your contribution to the Keptn Contrib organization, it has to fulfull all criteria listed above, plus the following:
 1. Automated builds
 1. Automated tests that are validated for each build
-1. 
+1. At least one release of the service compatible with the latest Keptn version
+1. At least one sponsor of the Keptn core team for your contribution
