@@ -21,8 +21,17 @@ If you want to contribute, please read the following guidelines.
 1. We will transfer the project from your account to the keptn-sandbox organization. All issues and history will be kept.
 1. You will be added as maintainer to the repo with full write access.
 1. We will support you in setting up the Travis build for your repo.
-1. Present your service in a Keptn Developer or Community meeting to have your service listed on [Keptn.sh](https://keptn.sh) 
+1. Present your service in a Keptn Community meeting to have your service listed on [Keptn.sh](https://keptn.sh) 
 
 ## How to contribute to existing repositories?
 
 For existing repositories in the Keptn Sandbox Organization the respective code owners (see CODEOWNERS file of each repo) are mainly responsible. To contribute, please open a PR in the repo and ask the code owners for approval.
+
+## How to be promoted to Keptn Contrib organization?
+
+The [Keptn Contrib](https://github.cmo/keptn-contrib) holds projects that have been promoted from Keptn Sandbox due to their adoption and high quality standards.
+To suggest your contribution to the Keptn Contrib organization, it has to fulfull all criteria listed above, plus the following:
+1. Automated builds
+1. Automated tests that are validated for each build
+1. At least one release of the service compatible with the latest Keptn version
+1. At least one sponsor of the Keptn core team for your contribution
