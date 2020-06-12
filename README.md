@@ -29,9 +29,95 @@ For existing repositories in the Keptn Sandbox Organization the respective code 
 
 ## How to be promoted to Keptn Contrib organization?
 
-The [Keptn Contrib](https://github.cmo/keptn-contrib) holds projects that have been promoted from Keptn Sandbox due to their adoption and high quality standards.
+The [Keptn Contrib](https://github.com/keptn-contrib) holds projects that have been promoted from Keptn Sandbox due to their adoption and high quality standards.
 To suggest your contribution to the Keptn Contrib organization, it has to fulfull all criteria listed above, plus the following:
 1. Automated builds
 1. Automated tests that are validated for each build
 1. At least one release of the service compatible with the latest Keptn version
 1. At least one sponsor of the Keptn core team for your contribution
+
+## RBAC Guidelines
+* Use the Service Account `keptn-default` of the keptn installation namespace wherever possible. This account has no k8s permissions assigned.
+* Never apply additional Roles or Rolebindings on the Service Account `keptn-default`
+* If your service needs permissions on k8s, create a new service account with the name `keptn-<your-service-name>` in the keptn installation namespace
+* Apply Roles, ClusterRoles, Rolebindings and ClusterRoleBindings with a minimum set of useful permissions on that service account
+* Prefer namespaced Roles and Rolebindings over ClusterRoles and ClusterRoleBindings
+
+### Example:
+Let's image, the service (deployment) `keptn-sample-service` needs read access for the secret "keptn-sample-secret".
+Therefore, please create the following Service Account, Role and RoleBinding. Finally, use this Service Account in the Deployment.
+
+**Service Account:**
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: keptn-sample-service
+  namespace: keptn
+  labels:
+    "app": "keptn"
+``` 
+**Role:**
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: keptn-sample-service-read-secret
+  namespace: keptn
+  labels:
+    "app": "keptn"
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - get
+    resourceNames:
+      - "keptn-sample-secret"
+```
+**RoleBinding:**
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: keptn-sample-service-read-secret
+  namespace: keptn
+  labels:
+    "app": "keptn"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: keptn-sample-service-read-secret
+subjects:
+  - kind: ServiceAccount
+    name: keptn-sample-service
+    namespace: keptn
+```
+**Deployment:**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: keptn-sample-service
+  name: keptn-sample-service
+  namespace: keptn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keptn-sample-service
+  template:
+    metadata:
+      labels:
+        app: keptn-sample-service
+    spec:
+      containers:
+      - image: keptn/keptn-sample-service
+        name: keptn-sample-service
+  serviceAccountName: keptn-sample-service
+```
+**Validation:**
+To check if your RBAC rules are working as intended, use 
+```kubectl auth can-i get secret/keptn-sample-secret --as system:serviceaccount:keptn:keptn-sample-service```
