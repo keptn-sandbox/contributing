@@ -43,8 +43,38 @@ To suggest your contribution to the Keptn Contrib organization, it has to fulful
 * Apply Roles, ClusterRoles, Rolebindings and ClusterRoleBindings with a minimum set of useful permissions on that service account
 * Prefer namespaced Roles and Rolebindings over ClusterRoles and ClusterRoleBindings
 
-### Example:
-Let's image, the service (deployment) `keptn-sample-service` needs read access for the secret "keptn-sample-secret".
+### Example 1: Keptn Service does not require any permissions:
+Let's imagine the Keptn service (which corresponds to a Kubernetes deployment and service) named `keptn-sample-service` requires
+no permissions (i.e. does not have to access the Kubernetes API at all).
+Therefore, the Service Account `keptn-default` can be used in the Deployment.
+
+**Deployment:**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: keptn-sample-service
+  name: keptn-sample-service
+  namespace: keptn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keptn-sample-service
+  template:
+    metadata:
+      labels:
+        app: keptn-sample-service
+    spec:
+      containers:
+      - image: keptn/keptn-sample-service
+        name: keptn-sample-service
+  serviceAccountName: keptn-default
+```
+
+### Example 2: Keptn Service requries read access for a secret
+Let's imagine the Keptn service (which corresponds to a Kubernetes deployment and service) named `keptn-sample-service` requires read-access for a secret called `keptn-sample-secret` in the keptn namespace.
 Therefore, please create the following Service Account, Role and RoleBinding. Finally, use this Service Account in the Deployment.
 
 **Service Account:**
