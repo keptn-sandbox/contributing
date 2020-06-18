@@ -85,7 +85,7 @@ metadata:
   name: keptn-sample-service
   namespace: keptn
   labels:
-    "app": "keptn"
+    app: keptn
 ``` 
 **Role:**
 ```yaml
@@ -95,7 +95,7 @@ metadata:
   name: keptn-sample-service-read-secret
   namespace: keptn
   labels:
-    "app": "keptn"
+    app: keptn
 rules:
   - apiGroups:
       - ""
@@ -114,7 +114,7 @@ metadata:
   name: keptn-sample-service-read-secret
   namespace: keptn
   labels:
-    "app": "keptn"
+    app: keptn
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
