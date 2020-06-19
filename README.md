@@ -43,6 +43,10 @@ To suggest your contribution to the Keptn Contrib organization, it has to fulful
 * Apply Roles, ClusterRoles, Rolebindings and ClusterRoleBindings with a minimum set of useful permissions on that service account
 * Prefer namespaced Roles and Rolebindings over ClusterRoles and ClusterRoleBindings
 
+As references, you can take a look 
+how the `keptn-default` Service Account is used in the `unleash-service` [here](https://github.com/keptn-contrib/unleash-service/pull/10/files)
+and how a new Service Account is introduced for creating, getting, and deleting secrets [here](https://github.com/keptn/keptn/pull/1931/files).
+
 ### Example 1: Keptn Service does not require any permissions:
 Let's imagine the Keptn service (which corresponds to a Kubernetes deployment and service) named `keptn-sample-service` requires
 no permissions (i.e. does not have to access the Kubernetes API at all).
