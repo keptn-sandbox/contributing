@@ -74,7 +74,7 @@ spec:
       containers:
       - image: keptn/keptn-sample-service
         name: keptn-sample-service
-  serviceAccountName: keptn-default
+      serviceAccountName: keptn-default
 ```
 
 ### Example 2: Keptn Service requries read access for a secret
@@ -150,7 +150,7 @@ spec:
       containers:
       - image: keptn/keptn-sample-service
         name: keptn-sample-service
-  serviceAccountName: keptn-sample-service
+      serviceAccountName: keptn-sample-service
 ```
 **Validation:**
 To check if your RBAC rules are working as intended, use 
