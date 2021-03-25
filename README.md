@@ -20,7 +20,7 @@ If you want to contribute, please read the following guidelines.
 1. The team will reach out to you to start the transfer process
 1. We will transfer the project from your account to the keptn-sandbox organization. All issues and history will be kept.
 1. You will be added as maintainer to the repo with full write access.
-1. We will support you in setting up the Travis build for your repo.
+1. We will support you in setting up the CI for your repo.
 1. Present your service in a Keptn Community meeting to have your service listed on [Keptn.sh](https://keptn.sh) 
 
 ## How to contribute to existing repositories?
