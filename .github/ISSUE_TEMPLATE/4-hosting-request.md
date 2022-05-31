@@ -11,7 +11,7 @@ about: I want to host my repo in keptn-sandbox
 ### Checklist
 - [ ] Repository transfer: <your-repo-here>
 - [ ] GitHub access permissions
-- [ ] Integration author has followed the [hosting guide](https://github.com/keptn-sandbox/contributing/blob/master/CONTRIBUTING.md) 
+- [ ] Repository author has followed the [hosting guide](https://github.com/keptn-sandbox/contributing/blob/master/CONTRIBUTING.md) 
 
 ### Sponsors
   
