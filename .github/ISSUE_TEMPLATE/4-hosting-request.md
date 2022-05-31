@@ -6,7 +6,7 @@ about: I want to host my repo in keptn-sandbox
 
 ### Description
 
-<!-- Some context around your integration here -->
+<!-- Some context around your repo here -->
 
 ### Checklist
 - [ ] Repository transfer: <your-repo-here>
