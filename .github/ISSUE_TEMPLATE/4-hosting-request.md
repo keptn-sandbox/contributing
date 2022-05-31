@@ -1,7 +1,7 @@
 ---
 name: ":cloud: Hosting request"
 labels: hosting-request
-about: I want to host my integration in keptn-sandbox
+about: I want to host my repo in keptn-sandbox
 ---
 
 ### Description
